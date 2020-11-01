@@ -232,6 +232,8 @@ nav a:hover {
 }
 
 .gallery {
+  display: flex;
+  align-items: flex-end;
   padding-top: 0;
   height: 100vh;
 
@@ -240,6 +242,14 @@ nav a:hover {
   background-size: cover;
   background-position: top center;
   background-attachment: fixed;
+}
+
+.description {
+  padding: 20px;
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .contacts {
