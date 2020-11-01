@@ -1,6 +1,7 @@
 import './index.html';
 import './style.css';
 import { Layer } from './Layer/index.js';
+import { Drinks } from './Drinks/index.js';
 
 console.log('funguju???');
 
@@ -16,39 +17,22 @@ for (let i = 0; i < navLink.length; i++) {
   });
 }
 
-const orderBtn = document.querySelector('.order-btn');
-const drinkCup = document.querySelector('.drink__cup');
-let ordered = false;
-const makeOrder = () => {
-  if (ordered === false) {
-    drinkCup.classList.add('drink__cup--selected');
-    ordered = true;
-    orderBtn.textContent = 'Zrušit';
-  } else {
-    drinkCup.classList.remove('drink__cup--selected');
-    orderBtn.textContent = 'Objednat';
-    ordered = false;
-  }
+const drinksList = document.querySelector('.drinks-list');
+const romano = {
+  id: 'romano',
+  name: 'Romano',
+  ordered: false,
+  layers: [
+    {
+      color: '#fbdf5b',
+      label: 'citrón',
+    },
+    {
+      color: '#613916',
+      label: 'espresso',
+    },
+  ],
 };
 
-orderBtn.addEventListener('click', makeOrder);
-
-const drinkInfo = document.querySelector('.drink__info');
-const cappuccino = [
-  {
-    color: '#feeeca',
-    label: 'mléčná pěna',
-  },
-  {
-    color: 'fed7b0a',
-    label: 'teplé mléko',
-  },
-  {
-    color: '#613916',
-    label: 'espresso',
-  },
-];
-
-for (let i = 0; i < cappuccino.length; i++) {
-  drinkInfo.innerHTML += Layer(cappuccino[i]);
-}
+const romanoElm = Drinks(romano);
+drinksList.appendChild(romanoElm);
