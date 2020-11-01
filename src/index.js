@@ -1,5 +1,6 @@
 import './index.html';
 import './style.css';
+import { Layer } from './Layer/index.js';
 
 console.log('funguju???');
 
@@ -28,7 +29,26 @@ const makeOrder = () => {
     orderBtn.textContent = 'Objednat';
     ordered = false;
   }
-  console.log('Tak co se děje??');
 };
 
 orderBtn.addEventListener('click', makeOrder);
+
+const drinkInfo = document.querySelector('.drink__info');
+const cappuccino = [
+  {
+    color: '#feeeca',
+    label: 'mléčná pěna',
+  },
+  {
+    color: 'fed7b0a',
+    label: 'teplé mléko',
+  },
+  {
+    color: '#613916',
+    label: 'espresso',
+  },
+];
+
+for (let i = 0; i < cappuccino.length; i++) {
+  drinkInfo.innerHTML += Layer(cappuccino[i]);
+}
