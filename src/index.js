@@ -18,21 +18,16 @@ for (let i = 0; i < navLink.length; i++) {
 }
 
 const drinksList = document.querySelector('.drinks-list');
-const romano = {
-  id: 'romano',
-  name: 'Romano',
-  ordered: false,
-  layers: [
-    {
-      color: '#fbdf5b',
-      label: 'citrón',
-    },
-    {
-      color: '#613916',
-      label: 'espresso',
-    },
-  ],
-};
 
-const romanoElm = Drinks(romano);
-drinksList.appendChild(romanoElm);
+//const drinks = '';
+fetch('http://cafelora.kodim.cz/api/drinks')
+  .then((response) => response.json())
+  .then((json) =>
+    json.forEach((drink) => {
+      drinksList.appendChild(Drinks(drink));
+    }),
+  );
+
+// drinks.forEach((drink) => {
+//   drinksList.appendChild(Drinks(drink));
+// });
