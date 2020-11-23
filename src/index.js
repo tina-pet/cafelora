@@ -20,7 +20,7 @@ for (let i = 0; i < navLink.length; i++) {
 const drinksList = document.querySelector('.drinks-list');
 
 //const drinks = '';
-fetch('http://cafelora.kodim.cz/api/drinks')
+fetch('https://run.mocky.io/v3/920f04d5-bf2e-49b3-9402-c693e6ea9499')
   .then((response) => response.json())
   .then((json) =>
     json.forEach((drink) => {
